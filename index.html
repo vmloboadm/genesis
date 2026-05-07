@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Orçamento de manutenção para Notebook Dell Inspiron - Genesis Tecnologia, Campos dos Goytacazes.">
+  <meta name="theme-color" content="#f5f8fb">
+  <title>Orçamento | Genesis Tecnologia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --page: #f5f8fb;
+      --card: #ffffff;
+      --ink: #17202a;
+      --muted: #637083;
+      --line: #e4ebf2;
+      --soft: #eef6fb;
+      --blue: #0878a8;
+      --green: #16a36a;
+      --green-dark: #0f7a50;
+      --shadow: 0 18px 50px rgba(23, 32, 42, 0.10);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: clamp(14px, 3vw, 32px);
+      font-family: "Inter", Arial, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #ffffff 0%, var(--page) 100%);
+    }
+
+    .quote {
+      width: min(100%, 1000px);
+      margin: 0 auto;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: clamp(22px, 4vw, 36px);
+      border-bottom: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand img {
+      width: 76px;
+      height: 76px;
+      object-fit: contain;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 8px;
+    }
+
+    .brand span,
+    .label {
+      display: block;
+      color: var(--blue);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .brand strong {
+      display: block;
+      margin-top: 4px;
+      font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+    }
+
+    .date-pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: var(--green-dark);
+      background: #eaf8f1;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    main {
+      padding: clamp(22px, 4vw, 40px);
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      align-items: stretch;
+      margin-bottom: 24px;
+    }
+
+    .intro-card,
+    .price-card,
+    .box,
+    .banner {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: #fff;
+    }
+
+    .intro-card {
+      padding: clamp(22px, 4vw, 34px);
+      background: linear-gradient(135deg, #ffffff 0%, #f2f9fd 100%);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 640px;
+      margin-bottom: 12px;
+      font-size: clamp(2rem, 5vw, 3.35rem);
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    .lead {
+      max-width: 640px;
+      margin-bottom: 20px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.55;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip {
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: #334155;
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .price-card {
+      display: grid;
+      align-content: center;
+      padding: clamp(22px, 4vw, 32px);
+      color: #073522;
+      background: linear-gradient(135deg, #eaf8f1 0%, #effbff 100%);
+    }
+
+    .price-card strong {
+      display: block;
+      margin: 8px 0 12px;
+      color: var(--green-dark);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+    }
+
+    .price-card p {
+      margin-bottom: 0;
+      color: #42604f;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .box {
+      padding: 16px;
+      background: #fbfdff;
+    }
+
+    .box span {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .box strong {
+      line-height: 1.35;
+    }
+
+    .section-title {
+      margin: 26px 0 16px;
+    }
+
+    .section-title h2 {
+      margin-bottom: 6px;
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      letter-spacing: -0.04em;
+    }
+
+    .section-title p {
+      margin-bottom: 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .service {
+      display: flex;
+      gap: 12px;
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+    }
+
+    .service span {
+      flex: 0 0 auto;
+      display: grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--blue);
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    .service h3 {
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+
+    .service p {
+      margin-bottom: 0;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .payment {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .payment .box {
+      background: var(--soft);
+    }
+
+    .notes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .notes .box {
+      background: #fff;
+    }
+
+    .cta {
+      margin-top: 28px;
+      padding: clamp(22px, 4vw, 32px);
+      border-radius: 22px;
+      text-align: center;
+      color: #fff;
+      background: #0f7a50;
+    }
+
+    .cta h2 {
+      margin-bottom: 8px;
+      font-size: clamp(1.45rem, 3vw, 2.1rem);
+    }
+
+    .cta p {
+      margin: 0 auto 18px;
+      max-width: 560px;
+      color: rgba(255, 255, 255, 0.86);
+      line-height: 1.5;
+    }
+
+    .whatsapp-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: min(100%, 460px);
+      min-height: 56px;
+      padding: 15px 22px;
+      border-radius: 999px;
+      color: #0b3d2a;
+      background: #ffffff;
+      font-weight: 900;
+      text-decoration: none;
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .whatsapp-button:hover,
+    .whatsapp-button:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+      outline: none;
+    }
+
+    .banner {
+      margin-top: 24px;
+      padding: 10px;
+      background: #f8fbfd;
+    }
+
+    .banner img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    footer strong {
+      color: var(--ink);
+    }
+
+    @media (max-width: 820px) {
+      body {
+        padding: 0;
+      }
+
+      .quote {
+        border-radius: 0;
+        border-left: 0;
+        border-right: 0;
+      }
+
+      .topbar,
+      footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .intro,
+      .info-grid,
+      .services,
+      .payment,
+      .notes {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .brand img {
+        width: 64px;
+        height: 64px;
+      }
+
+      .date-pill {
+        white-space: normal;
+      }
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        background: #fff;
+      }
+
+      .quote {
+        width: 100%;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="quote" aria-label="Orçamento Genesis Tecnologia">
+    <header class="topbar">
+      <div class="brand">
+        <img src="https://i.imgur.com/5gk42UM.jpg" alt="Logo Genesis Tecnologia">
+        <div>
+          <span>Genesis Tecnologia</span>
+          <strong>Orçamento técnico</strong>
+        </div>
+      </div>
+      <div class="date-pill">Campos dos Goytacazes/RJ • 05/05/2026</div>
+    </header>
+
+    <main>
+      <section class="intro" aria-label="Resumo principal do orçamento">
+        <div class="intro-card">
+          <span class="label">Notebook Dell Inspiron</span>
+          <h1>Manutenção avançada</h1>
+          <p class="lead">Serviço completo para recuperar estabilidade, temperatura e desempenho do equipamento.</p>
+          <div class="chips">
+            <span class="chip">Cliente: Marlyane</span>
+            <span class="chip">Responsável: Rechard</span>
+            <span class="chip">WhatsApp: (22) 99957-7703</span>
+          </div>
+        </div>
+
+        <div class="price-card">
+          <span class="label">Valor total</span>
+          <strong>R$ 250,00</strong>
+          <p>Pagamento em 2x de R$ 125,00, com até 15 dias entre as parcelas.</p>
+        </div>
+      </section>
+
+      <section class="info-grid" aria-label="Dados rápidos">
+        <div class="box">
+          <span>Garantia</span>
+          <strong>45 dias</strong>
+        </div>
+        <div class="box">
+          <span>Backup</span>
+          <strong>Arquivos preservados quando acessíveis</strong>
+        </div>
+        <div class="box">
+          <span>Sistema</span>
+          <strong>Windows 11 limpo</strong>
+        </div>
+        <div class="box">
+          <span>Aprovação</span>
+          <strong>Direto pelo WhatsApp</strong>
+        </div>
+      </section>
+
+      <section aria-labelledby="servicos-title">
+        <div class="section-title">
+          <h2 id="servicos-title">Serviços inclusos</h2>
+          <p>Lista objetiva do que será realizado no notebook.</p>
+        </div>
+
+        <div class="services">
+          <article class="service">
+            <span>1</span>
+            <div>
+              <h3>Placa-mãe</h3>
+              <p>Limpeza profunda, desoxidação e revisão de contatos.</p>
+            </div>
+          </article>
+          <article class="service">
+            <span>2</span>
+            <div>
+              <h3>Soldas e conexões</h3>
+              <p>Recuperação técnica dos pontos necessários.</p>
+            </div>
+          </article>
+          <article class="service">
+            <span>3</span>
+            <div>
+              <h3>Cooler e pasta térmica</h3>
+              <p>Limpeza do resfriamento e aplicação de nova pasta.</p>
+            </div>
+          </article>
+          <article class="service">
+            <span>4</span>
+            <div>
+              <h3>Dobradiça</h3>
+              <p>Lubrificação, ajuste e reforço para uso mais seguro.</p>
+            </div>
+          </article>
+          <article class="service">
+            <span>5</span>
+            <div>
+              <h3>BIOS</h3>
+              <p>Reset, revisão e configuração de inicialização.</p>
+            </div>
+          </article>
+          <article class="service">
+            <span>6</span>
+            <div>
+              <h3>Backup e Windows 11</h3>
+              <p>Backup possível, instalação limpa e configuração inicial.</p>
+            </div>
+          </article>
+          <article class="service">
+            <span>7</span>
+            <div>
+              <h3>Otimização</h3>
+              <p>Ajustes para deixar o sistema mais leve e organizado.</p>
+            </div>
+          </article>
+          <article class="service">
+            <span>8</span>
+            <div>
+              <h3>Testes finais</h3>
+              <p>Conferência de funcionamento, temperatura e estabilidade.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="pagamento-title">
+        <div class="section-title">
+          <h2 id="pagamento-title">Pagamento</h2>
+        </div>
+        <div class="payment">
+          <div class="box">
+            <span>1ª parcela</span>
+            <strong>R$ 125,00 na aprovação</strong>
+          </div>
+          <div class="box">
+            <span>2ª parcela</span>
+            <strong>R$ 125,00 em até 15 dias</strong>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="Observações" class="notes">
+        <div class="box">
+          <span>Transparência</span>
+          <strong>Qualquer extra será avisado antes.</strong>
+        </div>
+        <div class="box">
+          <span>Dados</span>
+          <strong>Backup conforme acesso ao armazenamento.</strong>
+        </div>
+        <div class="box">
+          <span>Entrega</span>
+          <strong>Equipamento revisado antes da retirada.</strong>
+        </div>
+      </section>
+
+      <section class="cta" aria-label="Aprovação do orçamento">
+        <h2>Aprovar orçamento</h2>
+        <p>O botão abre o WhatsApp com a mensagem pronta para confirmar o serviço.</p>
+        <a class="whatsapp-button" href="https://wa.me/5522999577703?text=Or%C3%A7amento%20aprovado!%20gostaria%20de%20fazer%20o%20servi%C3%A7o!" target="_blank" rel="noopener noreferrer">
+          ✅ Aprovar pelo WhatsApp
+        </a>
+      </section>
+
+      <section class="banner" aria-label="Imagem institucional Genesis Tecnologia">
+        <img src="https://i.imgur.com/05xvaBo.jpg" alt="Imagem institucional Genesis Tecnologia">
+      </section>
+
+      <footer>
+        <div>
+          <strong>Genesis Tecnologia</strong><br>
+          Manutenção, backup, formatação e otimização.
+        </div>
+        <div>Campos dos Goytacazes/RJ • Rechard • (22) 99957-7703</div>
+      </footer>
+    </main>
+  </article>
+</body>
+</html>
